@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{DB984359-6585-4E9D-B3E7-147FCE2F5472}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Tunynet.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Data" />
+    <Reference Include="Quartz" />
+    <Reference Include="Enyim.Caching" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="log4net" />
+    <Reference Include="Autofac" />
+    <Reference Include="CodeKicker.BBCode" />
+    <Reference Include="System.Web" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RazorEngine" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Mvc" />
+    <Reference Include="HtmlAgilityPack" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PetaPoco.DatabaseTypes\MySqlDatabaseType.cs" />
+    <Compile Include="PetaPoco.DatabaseTypes\OracleDatabaseType.cs" />
+    <Compile Include="PetaPoco.DatabaseTypes\PostgreSQLDatabaseType.cs" />
+    <Compile Include="PetaPoco.DatabaseTypes\SQLiteDatabaseType.cs" />
+    <Compile Include="PetaPoco.DatabaseTypes\SqlServerCEDatabaseType.cs" />
+    <Compile Include="PetaPoco.DatabaseTypes\SqlServerDatabaseType.cs" />
+    <Compile Include="PetaPoco.Internal\ArrayKey.cs" />
+    <Compile Include="PetaPoco.Internal\AutoSelectHelper.cs" />
+    <Compile Include="PetaPoco.Internal\Cache.cs" />
+    <Compile Include="PetaPoco.Internal\DatabaseType.cs" />
+    <Compile Include="PetaPoco.Internal\EnumMapper.cs" />
+    <Compile Include="PetaPoco.Internal\ExpandoColumn.cs" />
+    <Compile Include="PetaPoco.Internal\MultiPocoFactory.cs" />
+    <Compile Include="PetaPoco.Internal\PagingHelper.cs" />
+    <Compile Include="PetaPoco.Internal\ParametersHelper.cs" />
+    <Compile Include="PetaPoco.Internal\PocoColumn.cs" />
+    <Compile Include="PetaPoco.Internal\PocoData.cs" />
+    <Compile Include="PetaPoco.Internal\Singleton.cs" />
+    <Compile Include="PetaPoco\AnsiString.cs" />
+    <Compile Include="PetaPoco\ColumnAttribute.cs" />
+    <Compile Include="PetaPoco\ColumnInfo.cs" />
+    <Compile Include="PetaPoco\Database.cs" />
+    <Compile Include="PetaPoco\ExplicitColumnsAttribute.cs" />
+    <Compile Include="PetaPoco\IgnoreAttribute.cs" />
+    <Compile Include="PetaPoco\IMapper.cs" />
+    <Compile Include="PetaPoco\ITransaction.cs" />
+    <Compile Include="PetaPoco\Mappers.cs" />
+    <Compile Include="PetaPoco\OracleProvider.cs" />
+    <Compile Include="PetaPoco\Page.cs" />
+    <Compile Include="PetaPoco\PrimaryKeyAttribute.cs" />
+    <Compile Include="PetaPoco\ResultColumnAttribute.cs" />
+    <Compile Include="PetaPoco\Sql.cs" />
+    <Compile Include="PetaPoco\SqlBehaviorAttribute.cs" />
+    <Compile Include="PetaPoco\SqlBehaviorFlags.cs" />
+    <Compile Include="PetaPoco\StandardMapper.cs" />
+    <Compile Include="PetaPoco\TableInfo.cs" />
+    <Compile Include="PetaPoco\TableNameAttribute.cs" />
+    <Compile Include="PetaPoco\Transaction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tunynet.Caching\CacheSettingAttribute.cs" />
+    <Compile Include="Tunynet.Caching\CacheVersionType.cs" />
+    <Compile Include="Tunynet.Caching\CachingExpirationType.cs" />
+    <Compile Include="Tunynet.Caching\DefaultCacheService.cs" />
+    <Compile Include="Tunynet.Caching\EntityCacheExpirationPolicies.cs" />
+    <Compile Include="Tunynet.Caching\ICache.cs" />
+    <Compile Include="Tunynet.Caching\ICacheService.cs" />
+    <Compile Include="Tunynet.Caching\IListCacheSetting.cs" />
+    <Compile Include="Tunynet.Caching\MemcachedCache.cs" />
+    <Compile Include="Tunynet.Caching\RealTimeCacheHelper.cs" />
+    <Compile Include="Tunynet.Caching\RuntimeMemoryCache.cs" />
+    <Compile Include="Tunynet.Email.Tasks\EmailTask.cs" />
+    <Compile Include="Tunynet.Email\EmailBuilder.cs" />
+    <Compile Include="Tunynet.Email\EmailQueueEntry.cs" />
+    <Compile Include="Tunynet.Email\EmailQueueRepository.cs" />
+    <Compile Include="Tunynet.Email\EmailService.cs" />
+    <Compile Include="Tunynet.Email\EmailSettings.cs" />
+    <Compile Include="Tunynet.Email\EmailTemplate.cs" />
+    <Compile Include="Tunynet.Email\IEmailQueueRepository.cs" />
+    <Compile Include="Tunynet.Email\IEmailSettingsManager.cs" />
+    <Compile Include="Tunynet.Email\ISmtpSettingsRepository.cs" />
+    <Compile Include="Tunynet.Email\SmtpSettings.cs" />
+    <Compile Include="Tunynet.Email\SmtpSettingsRepository.cs" />
+    <Compile Include="Tunynet.Events\BatchEventHandler.cs" />
+    <Compile Include="Tunynet.Events\CommonEventArgs.cs" />
+    <Compile Include="Tunynet.Events\CommonEventHandler.cs" />
+    <Compile Include="Tunynet.Events\EventBus.cs" />
+    <Compile Include="Tunynet.Events\EventHandlerWithHistory.cs" />
+    <Compile Include="Tunynet.Events\EventOperationType.cs" />
+    <Compile Include="Tunynet.Events\IEventBus.cs" />
+    <Compile Include="Tunynet.Events\IEventMoudle.cs" />
+    <Compile Include="Tunynet.FileStore\DefaultStoreFile.cs" />
+    <Compile Include="Tunynet.FileStore\DefaultStoreProvider.cs" />
+    <Compile Include="Tunynet.FileStore\IStoreFile.cs" />
+    <Compile Include="Tunynet.FileStore\IStoreProvider.cs" />
+    <Compile Include="Tunynet.FileStore\NetResource.cs" />
+    <Compile Include="Tunynet.FileStore\NetworkShareAccesser.cs" />
+    <Compile Include="Tunynet.FileStore\ResourceDisplayType.cs" />
+    <Compile Include="Tunynet.FileStore\ResourceScope.cs" />
+    <Compile Include="Tunynet.FileStore\ResourceType.cs" />
+    <Compile Include="Tunynet.Globalization\ResourceAccessor.cs" />
+    <Compile Include="Tunynet.Imaging\AnchorLocation.cs" />
+    <Compile Include="Tunynet.Imaging\CropFilter.cs" />
+    <Compile Include="Tunynet.Imaging\EXIFMetaDataService.cs" />
+    <Compile Include="Tunynet.Imaging\IImageFilter.cs" />
+    <Compile Include="Tunynet.Imaging\ImageMetadata.cs" />
+    <Compile Include="Tunynet.Imaging\ImageProcessor.cs" />
+    <Compile Include="Tunynet.Imaging\ImageWatermarkFilter.cs" />
+    <Compile Include="Tunynet.Imaging\RectangleUtil.cs" />
+    <Compile Include="Tunynet.Imaging\ResizeFilter.cs" />
+    <Compile Include="Tunynet.Imaging\ResizeMethod.cs" />
+    <Compile Include="Tunynet.Imaging\TextWatermarkFilter.cs" />
+    <Compile Include="Tunynet.Imaging\WatermarkFilterBase.cs" />
+    <Compile Include="Tunynet.Logging.Log4Net\Log4NetLogger.cs" />
+    <Compile Include="Tunynet.Logging.Log4Net\Log4NetLoggerFactoryAdapter.cs" />
+    <Compile Include="Tunynet.Logging.Repositories\IOperationLogRepository.cs" />
+    <Compile Include="Tunynet.Logging.Repositories\OperationLogRepository.cs" />
+    <Compile Include="Tunynet.Logging\ILogger.cs" />
+    <Compile Include="Tunynet.Logging\ILoggerFactoryAdapter.cs" />
+    <Compile Include="Tunynet.Logging\IOperationLogSpecificPart.cs" />
+    <Compile Include="Tunynet.Logging\IOperationLogSpecificPartProcesser.cs" />
+    <Compile Include="Tunynet.Logging\IOperatorInfoGetter.cs" />
+    <Compile Include="Tunynet.Logging\LoggerExtension.cs" />
+    <Compile Include="Tunynet.Logging\LoggerFactory.cs" />
+    <Compile Include="Tunynet.Logging\LogLevel.cs" />
+    <Compile Include="Tunynet.Logging\OperationLogEntry.cs" />
+    <Compile Include="Tunynet.Logging\OperationLogQuery.cs" />
+    <Compile Include="Tunynet.Logging\OperationLogService.cs" />
+    <Compile Include="Tunynet.Logging\OperatorInfo.cs" />
+    <Compile Include="Tunynet.Repositories\IRepository.cs" />
+    <Compile Include="Tunynet.Repositories\Repository.cs" />
+    <Compile Include="Tunynet.Tasks.Quartz\QuartzTask.cs" />
+    <Compile Include="Tunynet.Tasks.Quartz\QuartzTaskScheduler.cs" />
+    <Compile Include="Tunynet.Tasks\ITask.cs" />
+    <Compile Include="Tunynet.Tasks\ITaskDetailRepository.cs" />
+    <Compile Include="Tunynet.Tasks\ITaskScheduler.cs" />
+    <Compile Include="Tunynet.Tasks\RulePart.cs" />
+    <Compile Include="Tunynet.Tasks\RunAtServer.cs" />
+    <Compile Include="Tunynet.Tasks\TaskDetail.cs" />
+    <Compile Include="Tunynet.Tasks\TaskDetailRepository.cs" />
+    <Compile Include="Tunynet.Tasks\TaskFrequency.cs" />
+    <Compile Include="Tunynet.Tasks\TaskSchedulerFactory.cs" />
+    <Compile Include="Tunynet.Tasks\TaskService.cs" />
+    <Compile Include="Tunynet.Utilities\DictionaryExtension.cs" />
+    <Compile Include="Tunynet.Utilities\EncryptionUtility.cs" />
+    <Compile Include="Tunynet.Utilities\HashEncrypt.cs" />
+    <Compile Include="Tunynet.Utilities\HashEncryptType.cs" />
+    <Compile Include="Tunynet.Utilities\HtmlUtility.cs" />
+    <Compile Include="Tunynet.Utilities\HttpCollects.cs" />
+    <Compile Include="Tunynet.Utilities\ReadOnlyCollectionExtension.cs" />
+    <Compile Include="Tunynet.Utilities\StringUtility.cs" />
+    <Compile Include="Tunynet.Utilities\SymmetricEncrypt.cs" />
+    <Compile Include="Tunynet.Utilities\SymmetricEncryptType.cs" />
+    <Compile Include="Tunynet.Utilities\TrustedHtml.cs" />
+    <Compile Include="Tunynet.Utilities\TrustedHtmlLevel.cs" />
+    <Compile Include="Tunynet.Utilities\ValueUtility.cs" />
+    <Compile Include="Tunynet.Utilities\WebUtility.cs" />
+    <Compile Include="Tunynet\CommonExceptionDescriptor.cs" />
+    <Compile Include="Tunynet\DefaultRunningEnvironment.cs" />
+    <Compile Include="Tunynet\DIContainer.cs" />
+    <Compile Include="Tunynet\EntityData.cs" />
+    <Compile Include="Tunynet\EntityOperationType.cs" />
+    <Compile Include="Tunynet\ExceptionDescriptor.cs" />
+    <Compile Include="Tunynet\ExceptionFacade.cs" />
+    <Compile Include="Tunynet\ExceptionMessageDescriptor.cs" />
+    <Compile Include="Tunynet\IdGenerator.cs" />
+    <Compile Include="Tunynet\IEntity.cs" />
+    <Compile Include="Tunynet\IPagingDataSet.cs" />
+    <Compile Include="Tunynet\IRunningEnvironment.cs" />
+    <Compile Include="Tunynet\ISerializableProperties.cs" />
+    <Compile Include="Tunynet\PagingDataSet.cs" />
+    <Compile Include="Tunynet\PagingEntityIdCollection.cs" />
+    <Compile Include="Tunynet\PermissionExceptionDescriptor.cs" />
+    <Compile Include="Tunynet\PropertySerializer.cs" />
+    <Compile Include="Tunynet\ResourceExceptionDescriptor.cs" />
+    <Compile Include="Tunynet\SerializablePropertiesBase.cs" />
+    <Compile Include="Tunynet\SqlTraceEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tunynet.Caching\CacheExample.xml" />
+    <EmbeddedResource Include="Tunynet.Utilities\BBCodeToHtml.xml" />
+    <EmbeddedResource Include="Tunynet\Models.SerializablePropertiesExample.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
